@@ -4,7 +4,10 @@ export default class Dropdown extends Component {
     render() {
         return (
             <label>
-                <select>
+                <select onChange={this.props.displayOrder}>
+                    <option value="">
+                        --Select Order--
+                    </option>
                     <option value="Ascending">
                         Ascending
                     </option>
