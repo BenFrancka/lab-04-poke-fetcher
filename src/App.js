@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import request from 'superagent';
 import './App.css';
+import PokeList from './PokeList';
+import Dropdown from './Dropdown';
 
 export default class App extends Component {
 
@@ -38,7 +40,10 @@ export default class App extends Component {
   render() {
   return (
     <div className="App">
-      
+      <Dropdown />
+      <input onChange={this.handleChange} />
+      <button onClick={this.handleClick}>Search</button>
+      <PokeList />
     </div>
   );
 }
