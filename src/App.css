@@ -36,10 +36,22 @@ body {
 input {
   font-size: 2rem;
   text-align: center;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(255, 0, 0, 0.349);
 }
 
 button {
   font-size: 2rem;
+  border: outset 1rem red;
+  border-radius: 25%;
+  background-color: white;
+}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 select {
