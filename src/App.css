@@ -38,7 +38,8 @@ input {
   text-align: center;
   color: white;
   font-weight: bold;
-  background-color: rgba(255, 0, 0, 0.349);
+  background-color: green;
+  border: outset greenyellow 1rem;
 }
 
 button {
@@ -56,6 +57,8 @@ button:active {
 
 select {
   font-size: 2rem;
+  background-color: honeydew;
+  border: outset green 1rem;
 }
 
 
