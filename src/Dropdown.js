@@ -8,10 +8,10 @@ export default class Dropdown extends Component {
                     <option value="">
                         --Select Order--
                     </option>
-                    <option value="Ascending">
+                    <option value={this.props.display}>
                         Ascending
                     </option>
-                    <option value="Descending">
+                    <option value={this.props.display}>
                         Descending
                     </option>
                 </select>
