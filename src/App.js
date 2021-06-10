@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
+import request from 'superagent';
 import './App.css';
 
-function App() {
+export default class App extends Component {
+
+  state= {
+    pokeDex: [],
+    loading: false,
+    query: ''
+  }
+
+  componentDidMount = async () => {
+    await this.fetchPokemon();
+  }
+
+  handleClick = async () => {
+    await this.fetchPokemon();
+  }
+
+  handleChange = (e) => {
+    this.setState({ query: e.target.value });
+  }
+
+  fetchPokemon = async () => {
+    this.setState({ loading: true });
+
+    const URL = this.state.query
+      ? `https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}`
+      : 'https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon='
+
+      const pokemon = await request.get(URL)
+
+      this.setState({ loading: false });
+      this.setState( { pokeDex: pokemon.body});
+  }
+
+  render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
-
-export default App;
+}
