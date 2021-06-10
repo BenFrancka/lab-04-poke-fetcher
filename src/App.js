@@ -50,18 +50,25 @@ export default class App extends Component {
   render() {
   
   return (
-    <div className="App">
-      <Dropdown
-        displayOrder ={this.handleOrder}
-      />
-      <input onChange={this.handleChange} />
-      <button onClick={this.handleClick}>Search</button>
-      {this.state.loading
-        && <LoadDisplay />}
-      <PokeList 
-        display={this.state.pokeDex}
-      />
-    </div>
+    <body>
+      <div className="App">
+
+        <div className="input">
+          <Dropdown
+            displayOrder ={this.handleOrder}
+          />
+          <input onChange={this.handleChange} />
+          <button onClick={this.handleClick}>Search</button>
+        </div>
+
+        {this.state.loading
+          && <LoadDisplay />}
+        <PokeList 
+          display={this.state.pokeDex}
+        />
+        
+      </div>
+    </body>
   );
 }
 }
