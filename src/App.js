@@ -36,7 +36,7 @@ export default class App extends Component {
 
   //sets state of how images will be ordered based on user selection
   handleOrder = (e) => {
-    this.setState({ order: e.target.value });
+    this.setState({ order: e.target.value }, this.fetchPokemon);
   }
 
   //fetches data from pokemon api
@@ -57,13 +57,13 @@ export default class App extends Component {
 
       this.setState({ loading: false });
       this.setState( { pokeDex: pokemon.body.results });
-      this.setState({order: pokemonOrder.body.results });
+      this.setState({order: pokemonOrder.body.results.direction });
   }
 
   render() {
   console.log(this.state.order);
   return (
-    <body>
+    <main>
       <div className="App">
 
         <div className="input">
@@ -71,18 +71,19 @@ export default class App extends Component {
             displayOrder ={this.handleOrder}
             display={this.state.order}
           />
+
           <input onChange={this.handleChange} />
           <button onClick={this.handleClick}>Search</button>
         </div>
 
         {this.state.loading
           && <LoadDisplay />}
+
         <PokeList 
           display={this.state.pokeDex}
         />
-
       </div>
-    </body>
+    </main>
   );
 }
 }

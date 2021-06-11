@@ -1,4 +1,4 @@
-body {
+main {
   background-color: steelblue;
 }
 
@@ -30,6 +30,9 @@ body {
 }
 
 .input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 5%;
 }
 
