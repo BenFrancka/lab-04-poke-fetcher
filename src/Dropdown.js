@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 export default class Dropdown extends Component {
     render() {
-        console.log(this.props.display);
         return (
             <label>
                 <select onChange={this.props.displayOrder}>

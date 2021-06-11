@@ -43,25 +43,22 @@ export default class App extends Component {
   fetchPokemon = async () => {
     this.setState({ loading: true });
 
-    const queryURL = this.state.query
+    //specifies URL pathing from the API based on user query
+    const URL = this.state.query
       ? `https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.state.order}`
       : 'https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon='
-    
-      const orderURL = this.state.order
-        ?  `https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=pokemon&direction=${this.state.order}`
-        : 'https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon='
 
-      const pokemon = await request.get(queryURL)
-      const pokemonOrder = await request.get(orderURL)
+      const pokemon = await request.get(URL)
       await sleep (3000)
-
+    
+      //updates state for loading, pokeDex, and order
       this.setState({ loading: false });
       this.setState( { pokeDex: pokemon.body.results });
-      this.setState({order: pokemonOrder.body.results.direction });
+      this.setState({order: pokemon.body.results.direction });
   }
 
+//renders the HTML on the page with Components and events
   render() {
-  console.log(this.state.order);
   return (
     <main>
       <div className="App">
@@ -69,7 +66,6 @@ export default class App extends Component {
         <div className="input">
           <Dropdown
             displayOrder ={this.handleOrder}
-            display={this.state.order}
           />
 
           <input onChange={this.handleChange} />
