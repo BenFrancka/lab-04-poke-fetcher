@@ -4,29 +4,7 @@ body {
 
 .App {
   text-align: center;
- 
-}
-
-.pokeball {
-  border: solid;
-  border-radius: 50%;
-  background: red;
-}
-
-.poke-box {
-  border: solid;
-  border-radius: 50%;
-  width: 25%;
-  height: 25%;
-  font-size: 1.5rem;
-  color: white;
-  background-color: red;
-}
-
-.poke-display {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  font-family: 'VT323', monospace;
 }
 
 .input {
@@ -34,15 +12,6 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 5%;
-}
-
-input {
-  font-size: 2rem;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  background-color: green;
-  border: outset greenyellow 1rem;
 }
 
 button {
@@ -58,10 +27,6 @@ button:active {
   transform: translateY(4px);
 }
 
-select {
-  font-size: 2rem;
-  background-color: honeydew;
-  border: outset green 1rem;
-}
+
 
 

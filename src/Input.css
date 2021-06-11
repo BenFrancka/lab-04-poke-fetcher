@@ -1,0 +1,13 @@
+input {
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background-color: green;
+    border: outset greenyellow 1rem;
+    border-radius: 25%;
+  }
+  
+  input:hover {
+    background-color: tomato;
+  }

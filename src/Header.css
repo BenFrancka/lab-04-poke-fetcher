@@ -1,0 +1,7 @@
+.header {
+    border: outset red 2rem;
+    border-radius: 25%;
+    margin-bottom: 4%;
+    background-color: white;
+    font-size: 2rem;
+  }
