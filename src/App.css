@@ -30,6 +30,10 @@ body {
   background-color: red;
 }
 
+.poke-box:hover {
+  background-color: yellowgreen;
+}
+
 .poke-display {
   display: flex;
   flex-wrap: wrap;

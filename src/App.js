@@ -5,6 +5,7 @@ import PokeList from './PokeList';
 import Dropdown from './Dropdown';
 import LoadDisplay from './LoadDisplay';
 import Header from './Header';
+import Input from './Input';
 
 //sets timer for loading spinner display validation
 const sleep = (x) => new Promise((res, rej) => setTimeout(() => { res() }, x))
@@ -64,12 +65,14 @@ export default class App extends Component {
   
       <main className="App">
         <Header />
+        
         <div className="input">
           <Dropdown
             displayOrder ={this.handleOrder}
           />
-
-          <input onChange={this.handleChange} />
+          <Input 
+            handleChange ={this.handleChange}
+          />
           <button onClick={this.handleClick}>Search</button>
         </div>
 
