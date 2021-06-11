@@ -65,7 +65,7 @@ export default class App extends Component {
   
       <main className="App">
         <Header />
-        
+
         <div className="input">
           <Dropdown
             displayOrder ={this.handleOrder}

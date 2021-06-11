@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './LoadDisplay.css';
 
 export default class LoadDisplay extends Component {
     render() {

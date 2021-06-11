@@ -1,0 +1,13 @@
+.poke-box {
+    border: outset 1.5rem;
+    border-radius: 50%;
+    width: 25%;
+    height: 25%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: red;
+  }
+  
+  .poke-box:hover {
+    background-color: yellowgreen;
+  }

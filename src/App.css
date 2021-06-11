@@ -7,54 +7,11 @@ body {
   font-family: 'VT323', monospace;
 }
 
-.header {
-  border: outset red 2rem;
-  border-radius: 25%;
-  margin-bottom: 4%;
-  background-color: white;
-  font-size: 2rem;
-}
-.pokeball {
-  border: solid;
-  border-radius: 50%;
-  background: red;
-}
-
-.poke-box {
-  border: outset 1.5rem;
-  border-radius: 50%;
-  width: 25%;
-  height: 25%;
-  font-size: 1.5rem;
-  color: white;
-  background-color: red;
-}
-
-.poke-box:hover {
-  background-color: yellowgreen;
-}
-
-.poke-display {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .input {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 5%;
-}
-
-input {
-  font-size: 2rem;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  background-color: green;
-  border: outset greenyellow 1rem;
-  border-radius: 25%;
 }
 
 button {
@@ -70,11 +27,6 @@ button:active {
   transform: translateY(4px);
 }
 
-select {
-  font-size: 2rem;
-  background-color: honeydew;
-  border: outset green 1rem;
-  border-radius: 25%;
-}
+
 
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './PokeItem.css';
 
 export default class PokeItem extends Component {
     render() {
