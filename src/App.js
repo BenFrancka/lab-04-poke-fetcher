@@ -4,6 +4,7 @@ import './App.css';
 import PokeList from './PokeList';
 import Dropdown from './Dropdown';
 import LoadDisplay from './LoadDisplay';
+import Header from './Header';
 
 //sets timer for loading spinner display validation
 const sleep = (x) => new Promise((res, rej) => setTimeout(() => { res() }, x))
@@ -60,9 +61,9 @@ export default class App extends Component {
 //renders the HTML on the page with Components and events
   render() {
   return (
-    <main>
-      <div className="App">
-
+  
+      <main className="App">
+        <Header />
         <div className="input">
           <Dropdown
             displayOrder ={this.handleOrder}
@@ -78,8 +79,7 @@ export default class App extends Component {
         <PokeList 
           display={this.state.pokeDex}
         />
-      </div>
-    </main>
+      </main>
   );
 }
 }
