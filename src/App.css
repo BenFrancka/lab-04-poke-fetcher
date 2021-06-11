@@ -4,11 +4,11 @@ body {
 
 .App {
   text-align: center;
- 
+  font-family: 'VT323', monospace;
 }
 
 .header {
-  border: solid red 2rem;
+  border: outset red 2rem;
   border-radius: 25%;
   margin-bottom: 4%;
   background-color: white;
@@ -21,7 +21,7 @@ body {
 }
 
 .poke-box {
-  border: solid;
+  border: outset 1.5rem;
   border-radius: 50%;
   width: 25%;
   height: 25%;
@@ -50,6 +50,7 @@ input {
   font-weight: bold;
   background-color: green;
   border: outset greenyellow 1rem;
+  border-radius: 25%;
 }
 
 button {
@@ -69,6 +70,7 @@ select {
   font-size: 2rem;
   background-color: honeydew;
   border: outset green 1rem;
+  border-radius: 25%;
 }
 
 
