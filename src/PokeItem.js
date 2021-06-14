@@ -4,7 +4,7 @@ import './PokeItem.css';
 export default class PokeItem extends Component {
     render() {
         return (
-            <div className="poke-box">
+            <div>
                 <p>
                     <img src={this.props.url} width="100" height="100" alt="pokemon" />
                 </p>
