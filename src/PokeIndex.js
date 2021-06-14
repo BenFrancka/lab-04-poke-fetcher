@@ -41,10 +41,15 @@ export default class PokeIndex extends Component {
     this.fetchPokemon();
   }
 
-  handlePage = async (e) => {
+  handleNextPage = async (e) => {
       await this.setState({page: this.state.page + 1});
       this.fetchPokemon();
   }
+
+  handlePreviousPage = async (e) => {
+    await this.setState({page: this.state.page - 1});
+    this.fetchPokemon();
+}
 
   //fetches data from pokemon api
   fetchPokemon = async () => {
@@ -89,7 +94,10 @@ export default class PokeIndex extends Component {
                 <PokeList 
                 display={this.state.pokeDex}
                 />
-                <button onClick={this.handlePage}>
+                <button onClick={this.handlePreviousPage}>
+                    Previous Page
+                </button>
+                <button onClick={this.handleNextPage}>
                     Next Page ({this.state.page + 1})
                 </button>
             </>
