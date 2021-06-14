@@ -15,7 +15,7 @@ export default class PokeIndex extends Component {
     pokeDex: [],
     loading: false,
     query: '',
-    order: '',
+    direction: '',
     page: 1
   }
 
@@ -36,8 +36,8 @@ export default class PokeIndex extends Component {
   }
 
   //sets state of how images will be ordered based on user selection
-  handleOrder = async (e) => {
-    await this.setState({ order: e.target.value });
+  handleDirection = async (e) => {
+    await this.setState({ direction: e.target.value });
     this.fetchPokemon();
   }
 
@@ -58,7 +58,7 @@ export default class PokeIndex extends Component {
     //specifies URL pathing from the API based on user query
         const display = new URLSearchParams({
             sort: 'pokemon',
-            order: this.state.direction,
+            direction: this.state.direction,
             page: this.state.page
         });
         if (this.state.query) {
@@ -80,7 +80,7 @@ export default class PokeIndex extends Component {
             <>
             <div className="input">
                 <Dropdown
-                    displayOrder ={this.handleOrder}
+                    displayDirection ={this.handleDirection}
                 />
                 <Input 
                     handleChange ={this.handleChange}

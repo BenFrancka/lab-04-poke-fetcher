@@ -15,7 +15,7 @@ export default class PokeDetail extends Component {
     fetchDetail = async () => {
         this.setState({ loading: true });
 
-        const pokemonId = this.props.match.params.pokeId;
+        const pokemonId = this.props.match.params.pokemonId;
         const data = await request.get(
             `https://pokedex-alchemy.herokuapp.com/api/pokedex/${pokemonId}`
         );
