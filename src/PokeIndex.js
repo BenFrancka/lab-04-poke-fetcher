@@ -15,7 +15,8 @@ export default class PokeIndex extends Component {
     pokeDex: [],
     loading: false,
     query: '',
-    order: 'asc'
+    order: '',
+    page: 1
   }
 
   //renders initial page with all images displayed
@@ -35,8 +36,14 @@ export default class PokeIndex extends Component {
   }
 
   //sets state of how images will be ordered based on user selection
-  handleOrder = (e) => {
-    this.setState({ order: e.target.value });
+  handleOrder = async (e) => {
+    await this.setState({ order: e.target.value });
+    this.fetchPokemon();
+  }
+
+  handlePage = async (e) => {
+      await this.setState({page: this.state.page + 1});
+      this.fetchPokemon();
   }
 
   //fetches data from pokemon api
@@ -44,21 +51,22 @@ export default class PokeIndex extends Component {
     this.setState({ loading: true });
 
     //specifies URL pathing from the API based on user query
-        const searchParams = new URLSearchParams({
+        const display = new URLSearchParams({
             sort: 'pokemon',
             order: this.state.direction,
+            page: this.state.page
         });
         if (this.state.query) {
-            searchParams.set('pokemon', this.state.query);
+            display.set('pokemon', this.state.query);
         }
-        console.log(searchParams.toString());
+        console.log(display.toString());
         const {
             body: { results: data },
         } = await request.get(
-            `https://pokedex-alchemy.herokuapp.com/api/pokedex?${searchParams.toString()}`
+            `https://pokedex-alchemy.herokuapp.com/api/pokedex?${display.toString()}`
         );
         this.setState({loading: false});
-        this.setState({ pokemon: data });
+        this.setState({ pokeDex: data });
     };
   
 
@@ -81,6 +89,9 @@ export default class PokeIndex extends Component {
                 <PokeList 
                 display={this.state.pokeDex}
                 />
+                <button onClick={this.handlePage}>
+                    Next Page ({this.state.page + 1})
+                </button>
             </>
         )
     }
