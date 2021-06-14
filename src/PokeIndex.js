@@ -6,6 +6,7 @@ import Dropdown from './Dropdown';
 import LoadDisplay from './LoadDisplay';
 import Input from './Input';
 
+
 //sets timer for loading spinner display validation
 const sleep = (x) => new Promise((res, rej) => setTimeout(() => { res() }, x))
 
@@ -21,7 +22,7 @@ export default class PokeIndex extends Component {
 
   //renders initial page with all images displayed
   componentDidMount = async () => {
-    await sleep(3000)
+    await sleep(2000)
     await this.fetchPokemon();
   }
 
@@ -64,7 +65,7 @@ export default class PokeIndex extends Component {
         if (this.state.query) {
             display.set('pokemon', this.state.query);
         }
-        console.log(display.toString());
+
         const {
             body: { results: data },
         } = await request.get(
