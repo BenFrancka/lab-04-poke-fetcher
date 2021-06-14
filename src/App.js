@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import request from 'superagent';
 import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import Home from './Home';
+import PokeIndex from './PokeIndex';
+import PokeDetail from './PokeDetal';
 import PokeList from './PokeList';
 import Dropdown from './Dropdown';
 import LoadDisplay from './LoadDisplay';
@@ -62,9 +67,14 @@ export default class App extends Component {
 //renders the HTML on the page with Components and events
   render() {
   return (
-  
+    <BrowserRouter>
       <main className="App">
         <Header />
+        <Switch>
+          <Route path="/pokemon/:id" component={PokeDetail} />
+          <Route path="/pokemon" component={PokeIndex} />
+          <Route path="/" component={Home} />
+        </Switch>
 
         <div className="input">
           <Dropdown
@@ -83,6 +93,7 @@ export default class App extends Component {
           display={this.state.pokeDex}
         />
       </main>
+    </BrowserRouter>
   );
 }
 }
