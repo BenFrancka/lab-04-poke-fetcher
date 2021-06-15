@@ -1,0 +1,9 @@
+.home-img {
+    border-radius: 50%;
+    border: outset green 1rem;
+}
+
+.home-title {
+    font-size: 4rem;
+    background-color: lightblue;
+}

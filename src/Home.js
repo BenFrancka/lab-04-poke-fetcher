@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
+import './Home.css';
 
 export default class Home extends Component {
     render() {
         return (
             <>
-            <h1>
-                Homepage
+            <h1 className="home-title">
+                Welome to the Poke-Fetcher!
             </h1>
             <div>
-                <img src="pokeMON.png" alt="pokemon group"></img>
+                <img className= "home-img"src="pokegroup.png" alt="pokemon group"></img>
             </div>
             </>
         )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import request from 'superagent';
 import LoadDisplay from './LoadDisplay';
+import './PokeDetail.css';
 
 export default class PokeDetail extends Component {
 
@@ -25,7 +26,7 @@ export default class PokeDetail extends Component {
     };
     render() {
         return (
-            <div>
+            <div className="detail-display">
                 {this.state.loading
                 && <LoadDisplay />}
                 {!this.state.loading && (
@@ -34,10 +35,23 @@ export default class PokeDetail extends Component {
                         Pokemon Details 
                     </h1>
                     <p>
-                        {this.props.match.params.id}
+                        Variety: 
+                        {this.state.pokemonDetail.pokemon}
                     </p>
                     <p>
-                        {this.state.pokemonDetail.pokemon}
+                        <img src={this.state.pokemonDetail.url_image} alt="pokemon" />
+                    </p>
+                    <p>
+                        Height:
+                        {this.state.pokemonDetail.height}
+                    </p>
+                    <p>
+                        Weight:
+                        {this.state.pokemonDetail.weight}
+                    </p>
+                    <p>
+                        Type: 
+                        {this.state.pokemonDetail.type_1}
                     </p>
                     </>
                 )}
