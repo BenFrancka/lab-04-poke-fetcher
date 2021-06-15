@@ -26,9 +26,12 @@ export default class PokeDetail extends Component {
     };
     render() {
         return (
-            <div className="detail-display">
+            <>
+            <p className="poke-ball">
                 {this.state.loading
                 && <LoadDisplay />}
+            </p>
+            <div className="detail-display">
                 {!this.state.loading && (
                     <>
                     <h1>
@@ -56,6 +59,7 @@ export default class PokeDetail extends Component {
                     </>
                 )}
             </div>
+            </>
         )
     }
 }
