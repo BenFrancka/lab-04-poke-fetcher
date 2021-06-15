@@ -5,3 +5,14 @@
     background-color: white;
     font-size: 2rem;
   }
+
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-link:hover {
+    color: yellowgreen;
+  }
