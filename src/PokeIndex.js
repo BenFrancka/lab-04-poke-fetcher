@@ -22,7 +22,7 @@ export default class PokeIndex extends Component {
 
   //renders initial page with all images displayed
   componentDidMount = async () => {
-    await sleep(2000)
+    await sleep(3000)
     await this.fetchPokemon();
   }
 
