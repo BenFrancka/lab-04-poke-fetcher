@@ -95,9 +95,11 @@ export default class PokeIndex extends Component {
                 <PokeList 
                 display={this.state.pokeDex}
                 />
+                {this.state.page -1 > 0 &&(
                 <button onClick={this.handlePreviousPage}>
                     Previous Page
                 </button>
+                )}
                 <button onClick={this.handleNextPage}>
                     Next Page ({this.state.page + 1})
                 </button>
