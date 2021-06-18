@@ -17,7 +17,8 @@ export default class PokeIndex extends Component {
     loading: false,
     query: '',
     direction: '',
-    page: 1
+    page: 1,
+    count: 1
   }
 
   //renders initial page with all images displayed
@@ -66,17 +67,18 @@ export default class PokeIndex extends Component {
             display.set('pokemon', this.state.query);
         }
 
-        const {
-            body: { results: data },
-        } = await request.get(
+        const data = await request.get(
             `https://pokedex-alchemy.herokuapp.com/api/pokedex?${display.toString()}`
         );
+        
         this.setState({loading: false});
-        this.setState({ pokeDex: data });
+        this.setState({ pokeDex: data.body.results });
+        this.setState({ count:data.body.count })
     };
   
 
     render() {
+        console.log(this.state.count)
         return (
             <>
             <div className="input">
@@ -95,14 +97,19 @@ export default class PokeIndex extends Component {
                 <PokeList 
                 display={this.state.pokeDex}
                 />
-                {this.state.page -1 > 0 &&(
+                {
+                this.state.page !== 1 &&
                 <button onClick={this.handlePreviousPage}>
                     Previous Page
                 </button>
-                )}
+                }
+                {
+                this.state.page !==
+                Math.ceil(this.state.count/20) &&
                 <button onClick={this.handleNextPage}>
-                    Next Page ({this.state.page + 1})
+                    Next Page 
                 </button>
+                }
             </>
         )
     }
